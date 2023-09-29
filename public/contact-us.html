@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="Img/icon.png"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Light Area </title>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+	<link rel="stylesheet" href="css/contact-us.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+		<section class="header" style="padding-top: 20px; padding-bottom: 20px;">
+		
+			<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			
+
+			
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav mr-auto text-right">
+
+						
+
+						
+					
+						<li class="nav-item">
+							<a href="https://play.google.com/store/apps/details?id=com.armjld.lightareamanager" target="_blank"  class="nav-link">تحميل النطبيق<i class="fa fa-download" style="padding-left: 10px;"></i></a>
+						</li>
+						<li class="nav-item">
+							<a href="Login.html" class="nav-link">تسجيل الدخول<i class="fas fa-sign-in-alt" style="padding-left: 10px;"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="faq.html">الاسئلة الشائعة <i class="fas fa-question" style="padding-left: 10px;"></i></a>
+						</li>
+							
+						<li class="nav-item">
+							<a class="nav-link active-home" href="contact-us.html">تواصل معنا <i class="far fa-address-card" style="padding-left: 10px;"></i></a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link " href="about.html">Light Area <i class="fas fa-graduation-cap" style="padding-left: 10px;"></i></a>
+						</li>
+						
+						<li class="nav-item ">
+							<a class="nav-link " href="index.html">الرئيسية <i class="fas fa-home" style="padding-left: 10px;"></i></a>
+						</li>
+					</ul>
+						<!-- logo -->
+				<a class="navbar-brand" href="about.html"><img class="imgg" src="Img/logo.png"></a>
+				<!-- logo -->
+				</div>
+			
+		</div>
+</nav>
+	</section>
+
+		
+		<div class="container">
+
+		<div class="wrapper animated bounceInLeft">
+			<div class="company-info">
+				<h3>تواصل معانا - لايت اريا </h3>
+				<ul><!--
+					<li><i class="fa fa-road" style="padding-right: 10px"></i>شارع نصر الثورة -</li>
+					<li><i class="fa fa-phone" style="padding-right: 10px"></i>01145667735</li>-->
+					<li><i class="fa fa-envelope" style="padding-right: 10px"></i>Lightaarea@gmail.com</li>
+				</ul>
+			</div>
+			<div class="contact">
+				<h3>تواصل معانا</h3>
+				<div class="alert">تم ارسال رسالتك</div>
+				<form autocomplete="off" style="overflow: hidden;" id="contactForm">
+					<p>
+						<label>الاسم</label>
+						<input type="text" name="name" id="name" required>
+					</p>
+
+					<p>
+						<label>البريد الالكتروني</label>
+						<input type="text" name="email" id="email" required>
+					</p>
+					<p>
+						<label>رقم الهاتف</label>
+						<input type="text" name="phone" id="phone" required>
+					</p>
+					<p class="full">
+						<label>الرسالة</label>
+						<textarea name="message" id="message" rows="5" required ></textarea>
+					</p>
+					<p class="full">
+						 <button type="submit">ارسال</button>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<h6 style="text-align: center;"><b class="fon tit">Light Area</b></h6>
+					<p class="text-justify" style="color: white; text-align: center !important; ">
+
+						التعليم للجميع في اكبر منصه تعليمية
+
+						<br>
+						
+					</p>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6><b class="fon tit">الفئات</b></h6>
+					<ul class="footer-links">
+						<li><a href="faq.html" style="color: white;">الاسئلة الشائعة</a></li>
+						<li><a href="terms&conditons.html" style="color: white;">الشروط والاحكام</a></li>
+
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6 class="fon tit"><b class="fon tit">لينكات سريعة</b></h6>
+					<ul class="footer-links">
+						<li><a href="about.html" style="color: white;"> Light Area عن</a></li>
+					
+
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<a class="logo" href="#"><img style="color: white;" src="img/logo.png"></a>
+				</div>
+			</div>
+
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+						<a href="about.html" class="tit">Light Area</a>.
+					</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" target="_blank" href="https://www.facebook.com/lightarea"><i class="fab fa-facebook-square"></i></a></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script src="Js/contact.js"></script>
+</body></html>

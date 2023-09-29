@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/Login&SignUp.css" />
+    <title>Light Area</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="Img/icon.png"/>
+</head>
+
+
+
+<body>
+    <div id="myModal" class="modall">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close_modal" id="close_modal">&times;</span>
+            <div class="types">
+                <div>
+                    <a id="im_teacher"><img class="card-img-top" src="Img/teacherlogin.jpg" alt="Card image cap"></a>
+
+                    <h2>مدرس</h2>
+                </div>
+
+
+                <div>
+                    <a id="im_student"><img class="card-img-top" src="Img/studenlogin.jpg" alt="Card image cap"></a>
+                    <h2>طالب</h2>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form class="sign-in-form" autocomplete="new-password">
+                    <h2 class="title">تسجيل الدخول</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="البريد الالكتروني" id="login_email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="كلمة المرور" id="login_password" />
+                        <input type="checkbox" onclick="myFunction2()" style="margin-top: 7px;
+                        margin-left: 15px;">
+                        <span> اظهار كلمة المرور</span>
+
+                    </div>
+                    <a href="#" style="text-decoration: none; color: #ee3151; margin-top: 30px;" id="forget">هل نسيت
+                        كلمة السر ؟</a>
+                    <button type="button" id="login" class="btn solid"> تسجيل الدخول </button>
+                    <p class="social-text">او قم بتسجيل الدخول من خلال</p>
+                    <div class="social-media">
+                        <div id="buttonDiv">
+                            <a href="#" id="google_login" class="social-icon">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="#" id="forg" style="display: none;" class="sign-in-form">
+                    <h2 class="title">نسيت كلمة السر ؟</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="البريد الالكتروني" id="forgetemail" />
+                    </div>
+
+
+                    <button type="button" id="forget_password" class="btn solid">ارسال</button>
+
+
+                </form>
+
+
+                <form id="form" autocomplete="off" class="sign-up-form">
+                    <h2 class="title">انشاء حساب</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="اسم المستخدم" id="user_name" autocomplete="false"
+                            onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" />
+
+                    </div>
+                    <p id="username_valid">لا يمكنك ترك اسم المستخدم فارغ</p>
+                    <p id="user_valid"></p>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="الاسم" id="name_2" pattern="[A-Za-z0-9]+" autocomplete="off" />
+                    </div>
+                    <p id="name_valid">لا يمكنك ترك الاسم فارغ</p>
+                    <h3>تاريخ الميلاد</h3>
+                    <div class="input-field">
+
+                        <i class="fas fa-user"></i>
+                        <input type="date" placeholder="تاريخ الميلاد" id="bd" />
+                    </div>
+                    <p id="date_valid">لا يمكنك ترك تاريخ الميلاد فارغ</p>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="البريد الالكتروني" id="email" autocomplete="off" />
+                    </div>
+                    <p id="email1_valid">لا يمكنك ترك البريد الالكتروني فارغ</p>
+                    <p id="email_valid"></p>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" placeholder="رقم الهاتف" id="phonenumber" pattern="^01[0-2]\d{1,8}$"
+                            autocomplete="off" />
+                    </div>
+                    <p id="phone_valid">لا يمكنك ترك رقم الهاتف فارغ</p>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="كلمة المرور" id="password_up" autocomplete="off">
+                        <input type="checkbox" onclick="myFunction()" style="    margin-top: 7px;
+                        margin-left: 15px;">
+                        <p id="pass_valid">لا يمكنك ترك كلمة المرور فارغة</p>
+                        <p id="pass_valid2">يجب ان لا تقل كلمة المرور عن 6 ارقام</p>
+                        <span>اظهار كلمة المرور</span>
+
+
+                    </div>
+                    <button type="button" style="margin-top: 40px" id="create_acc" class="btn">انشاء حساب</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>ليس لديك حساب ؟</h3>
+                    <p>
+
+                        قم بأنشاء حسابك الان و شاهد شرح افضل المعلمين في مصر مستني اية ؟
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        انشاء حساب
+                    </button>
+                </div>
+                <img src="Img/log.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content" id="signin_content">
+                    <h3>هل لديك حساب بالفعل</h3>
+                    <p>
+                        قم بتسجيل الدخول الان و شاهد شرح افضل المعلمين في مصر مستني اية ؟
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        تسجيل الدخول
+                    </button>
+                </div>
+                <img src="Img/register.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            GoogleAuthProvider,
+            signInWithRedirect,
+            getRedirectResult,
+            signInWithPopup,
+            deleteUser,
+            FacebookAuthProvider,
+            signInWithCredential,
+            linkWithCredential,
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+        import { getFirestore, collection, where, getDocs, doc, query, getDoc, addDoc, setDoc, updateDoc, deleteDoc, orderBy, limit, startAt as startAtt, startAfter as startAfterr } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+        import { getDatabase, set, ref, update, child, get, orderByKey, endAt, orderByChild, limitToFirst, limitToLast, query as squery, startAt, startAfter, } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+        import { getStorage, ref as sRef, uploadBytes, getDownloadURL, uploadBytesResumable } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+        import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-functions.js"
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCHMPzqBiDTGmOA1T2DavAaludCOiPb2Qk",
+            authDomain: "light-area-ee9d2.firebaseapp.com",
+            databaseURL: "https://light-area-ee9d2-default-rtdb.firebaseio.com",
+            projectId: "light-area-ee9d2",
+            storageBucket: "light-area-ee9d2.appspot.com",
+            messagingSenderId: "327935716338",
+            appId: "1:327935716338:web:712ee051f28488a3ce196b",
+            measurementId: "G-EM9YV97BK7"
+        };
+        sessionStorage.setItem("withGoogle", false);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getFirestore(app);
+        const database = getDatabase(app);
+        const provider = new GoogleAuthProvider();
+        const providerFB = new FacebookAuthProvider();
+
+        function retrivequiers(queryy) {
+            async function geta() {
+
+                let arr = []
+                const querySnapshott = await getDocs(queryy);
+                querySnapshott.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+
+                    arr.push(doc.data());
+                });
+                return arr;
+            }
+            function getb() {
+                return new Promise(function (resolve) {
+                    resolve(geta());
+                });
+            };
+
+            return getb();
+        }
+        //uniqe id handle to chaeck user device 
+        function setCookie(uuid) {
+
+            document.cookie = "webid = " + uuid;
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        async function save_web_id_firestore(webidd, uid) {
+            await updateDoc(doc(db, "users", uid), {
+                webid: webidd,
+
+            });
+        }
+
+
+
+        var span = document.getElementsByClassName("close_modal")[0];
+        span.onclick = function () {
+            var modal = document.getElementById("myModal");
+            modal.style.visibility = 'hidden';
+            modal.style.opacity = "0"
+            document.getElementById("sign-in-btn").click();
+        }
+
+
+
+        window.onload = async function () {
+            google.accounts.id.initialize({
+                client_id: "327935716338-34ihu5mladhpjck75s8rvu56p2s7uugh.apps.googleusercontent.com",
+                callback: await handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large" }  // customization attributes
+            );
+            google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+        async function handleCredentialResponse(response) {
+            // Build Firebase credential with the Google ID token.
+            const idToken = response.credential;
+            const credential = GoogleAuthProvider.credential(idToken);
+            const user = parseJwt(response.credential);
+            const googleId = user.sub;
+            console.log(user);
+            sessionStorage.setItem("googleCred", credential.idToken);
+            console.log(credential)
+            //  --> Check if User with this google id is registered
+            const userRef = collection(db, "users");
+            const q = query(userRef, where("googleId", "==", googleId));
+            let googleQuery = await retrivequiers(q);
+            // --> if user has no acoount
+            if (googleQuery.length == 0) {
+                console.log("u need to sign up");
+                document.getElementById("sign-up-btn").click();
+                var modal = document.getElementById("myModal");
+                modal.style.visibility = 'visible';
+                modal.style.opacity = "1"
+                sessionStorage.setItem("withGoogle", true);
+                sessionStorage.setItem("googleId", googleId);
+                console.log(googleId )
+                document.getElementById("email").value = user.email;
+                document.getElementById("email").disabled = true;
+
+            }
+            // user already has account
+            else {
+                signInWithCredential(auth, credential)
+                    .then((result) => {
+                        if (googleQuery[0].type == "teacher") {
+                            console.log("im teacher")
+                             location.replace("teacher-view/home.html");
+                        }
+                        if (googleQuery[0].type == "student") {
+                            alert("  قم بتسجيل الدخول من خلال الابلكيشن للمتابعة");
+                        }
+                    }).catch((error) => {
+                        // Handle Errors here.
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        // The email of the user's account used.
+                        const email = error.email;
+                        // The credential that was used.
+                        const credential = GoogleAuthProvider.credentialFromError(error);
+                        // ...
+                    });
+
+
+            }
+
+            // --> move to create account screen
+
+
+
+
+
+
+
+
+        }
+        function parseJwt(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            return JSON.parse(jsonPayload);
+        };
+
+
+        //// login with email   
+        $(document).on('click', '#login', function () {
+            var email = document.getElementById('login_email').value;
+            var password = document.getElementById('login_password').value;
+            console.log(password);
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+
+                    const user = userCredential.user;
+                    async function checkUserType() {
+                        const docRef = doc(db, "users", user.uid);
+                        const docSnap = await getDoc(docRef);
+                        if (docSnap.exists()) {
+                            //console.log("Document data:", docSnap.data().type);
+                            const type = await docSnap.data().type;
+                            var webid = docSnap.data().webid;
+
+                            if (type == "student") {
+                                var coooki_val = getCookie("webid");
+                                console.log(coooki_val);
+                                if (webid == null || webid == "") {
+                                    const uid = new Date().getTime() * Math.random() * 100000;
+                                    setCookie(uid);
+                                    save_web_id_firestore(uid, user.uid);
+                                    //logged in
+
+
+                                }
+                                if (webid == coooki_val) {
+                                    // logged in
+                                    alert("  قم بتسجيل الدخول من خلال الابلكيشن للمتابعة");
+                                } else {
+                                    alert("لقد قمت بالتسجيل ع اكتر من جهاز مسموح لك بجهاز واحد فقط للتعديل الرجاء متابعه خدمة العملاء ");
+                                }
+                            }
+                            if (type == "teacher") {
+                               location.replace("teacher-view/home.html");
+                            }
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    }
+                    checkUserType();
+                    // ...
+                    // save log in details into real time database
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+        // google login 
+        // $(document).on('click', '#google_login', function () {
+
+        //  });
+        //facebook login
+      
+        $(document).on('click', '#im_student', function () {
+            sessionStorage.setItem("type", "student");
+            var content = document.getElementById("signin_content")
+            var modal = document.getElementById("myModal");
+            modal.style.visibility = 'hidden';
+            content.style.display = "none";
+        })
+        $(document).on('click', '#im_teacher', function () {
+            sessionStorage.setItem("type", "teacher");
+            var content = document.getElementById("signin_content")
+            var modal = document.getElementById("myModal");
+            modal.style.visibility = 'hidden';
+            content.style.display = "none";
+        })
+
+        // validta username on change
+
+        const selectElement = document.getElementById('user_name');
+
+        selectElement.addEventListener('keyup', () => handleClick(), false);
+        async function handleClick() {
+            const userRef = collection(db, "users");
+            const q = query(userRef, where("userName", "==", selectElement.value));
+
+            let googleQueryy = await retrivequiers(q);
+            var valid = document.getElementById("user_valid");
+            if (googleQueryy.length == 0) {
+                valid.innerHTML = "اسم المستخدم صحيح";
+                valid.style.color = "green";
+            } else {
+                valid.innerHTML = "اسم المستخدم موجود بالفعل ";
+                valid.style.color = "red";
+            }
+            if(selectElement.value.length<6){
+                valid.innerHTML = "  يجب ان يكون اسم المستخدم من 6 حروف او اكثر";
+                valid.style.color = "red";
+            }
+            if(selectElement.value.length>16){
+                valid.innerHTML = "  يجب ان لا يتعدي اسم المستحدم 16 حرف";
+                valid.style.color = "red";
+            }
+        }
+        //validata email 
+        const selectElement2 = document.getElementById('email');
+
+        selectElement2.addEventListener('keyup', () => handleClick2(), false);
+        async function handleClick2() {
+            const userRef = collection(db, "users");
+            const q = query(userRef, where("email", "==", selectElement2.value));
+            let googleQueryy = await retrivequiers(q);
+            var valid2 = document.getElementById("email_valid");
+            if (googleQueryy.length == 0) {
+                valid2.innerHTML = "البريد الالكتروني صحيح";
+                valid2.style.color = "green";
+            } else {
+                valid2.innerHTML = "البريد الالكتروني مستخدم بالفعل";
+                valid2.style.color = "red";
+            }
+        }
+        //validate sign up
+        function userUid() {
+            return new Promise((resolve, reject) => {
+                const userr = onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        // User is signed in, see docs for a list of available properties
+                        // https://firebase.google.com/docs/reference/js/firebase.User
+
+                        const uidd = user.uid;
+                        //////console.log(uidd);
+                        resolve(uidd);
+                    } else {
+                        // User is signed out
+                        alert("الرجاء قم بتسجيل الدخول مره اخري");
+                        location.replace("../Login.html");
+
+                    }
+                    userr();
+                });
+            })
+
+        }
+
+        function validte() {
+            var user_name = document.getElementById("user_name").value;
+            var name = document.getElementById("name_2").value;
+            var birth_day = document.getElementById("bd").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phonenumber").value;
+            var password = document.getElementById("password_up").value;
+
+
+            var user_name_valid = document.getElementById("user_valid").style.color;
+            var email_valid = document.getElementById("email_valid").style.color;
+
+            var user_valid = document.getElementById("username_valid");
+            var name_valid = document.getElementById("name_valid");
+            var bd_valid = document.getElementById("date_valid");
+            var email1_valid = document.getElementById("email1_valid");
+            var phone_valid = document.getElementById("phone_valid");
+            var pass_valid = document.getElementById("pass_valid");
+            var pass_valid2 = document.getElementById("pass_valid2");
+
+            if (user_name_valid == "red") {
+                return false;
+            }
+            if (email_valid == "red" && email != "") {
+                document.getElementById("email_valid").style.display = "block";
+                email1_valid.style.display = "none";
+                return false;
+            }
+            if (email_valid == "green") {
+                document.getElementById("email_valid").style.display = "none";
+            }
+
+            if (user_name == "") {
+                user_valid.style.display = "block";
+                return false
+            }
+            else {
+                user_valid.style.display = "none";
+            }
+
+            if (name == "") {
+                name_valid.style.display = "block";
+                return false
+            }
+            else {
+                name_valid.style.display = "none";
+            }
+
+            if (birth_day == "") {
+                bd_valid.style.display = "block";
+                return false
+            }
+            else {
+                bd_valid.style.display = "none";
+            }
+
+            if (email == "") {
+                email1_valid.style.display = "block";
+                return false
+            }
+            else {
+                email1_valid.style.display = "none";
+            }
+
+            if (phone == "") {
+                phone_valid.style.display = "block";
+                return false
+            }
+            else {
+                phone_valid.style.display = "none";
+            }
+
+            if (password == "") {
+                pass_valid.style.display = "block";
+                return false
+            }
+            else {
+                pass_valid.style.display = "none";
+            }
+
+            if (password.length < 6 && password != "") {
+                pass_valid2.style.display = "block";
+                return false;
+            }
+            else {
+                pass_valid2.style.display = "none";
+            }
+
+            return true;
+
+        }
+
+        $(document).on('click', '#create_acc', async function () {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password_up").value;
+            var withGoogle = sessionStorage.getItem("withGoogle");
+            if (validte() == true) {
+                await createUserWithEmailAndPassword(auth, email, password)
+                const user_uid = await userUid();
+                console.log(user_uid);
+                await set_user_data(user_uid);
+                var check_google = sessionStorage.getItem("withGoogle");
+                console.log(check_google);
+                if (check_google == "true") {
+                    var credential = sessionStorage.getItem("googleCred")
+                    const credential2 = GoogleAuthProvider.credential(credential);
+                    console.log(credential2);
+                    linkWithCredential(auth.currentUser, credential2)
+                        .then((usercred) => {
+                            const user = usercred.user;
+                            console.log("Account linking success", user);
+                        }).catch((error) => {
+                            console.log("Account linking error", error);
+                        });
+                }
+                var type = sessionStorage.getItem("type");
+                console.log(type);
+                alert("تم انشاء حسابك بنجاح");
+                if(type=="teacher"){
+                    console.log("im teacher")
+                    location.replace("teacher-view/home.html");
+                }
+                if(type=="student"){
+                    alert("  قم بتسجيل الدخول من خلال الابلكيشن للمتابعة");
+                }
+
+            }
+            else {
+
+            }
+
+        })
+
+        async function set_user_data(idd) {
+            console.log("id :" , idd);
+            var check_google = sessionStorage.getItem("withGoogle");
+            var google_id = "";
+            if (check_google == "true") {
+                google_id = sessionStorage.getItem("googleId");
+            }
+            console.log(google_id)
+            var name1 = document.getElementById("name_2").value;
+            var email1 = document.getElementById("email").value;
+            var pass1 = document.getElementById("password_up").value;
+            var phonenumber = document.getElementById("phonenumber").value;
+            var type1 = sessionStorage.getItem("type");
+            var user1 = document.getElementById("user_name").value;
+            var bd = document.getElementById("bd").value;
+            bd = new Date(bd);
+            const docRef = await setDoc(doc(db, "users" , idd), {
+                id:idd,
+                userName:user1,
+                name: name1,
+                email: email1,
+                pass: pass1,
+                phone: phonenumber,
+                type: type1,
+                birthday: bd,
+                centerId: "",
+                trimmedPhone: "",
+                device_token: "",
+                unique_id: "",
+                mangerId: "",
+                facebookId: "",
+                googleId: google_id,
+                ppUrl: "",
+                wallet: 0,
+                watchedVideosCount: 0,
+                numberVerfied: false,
+                date: new Date(),
+                active: true,
+                refferId: "",
+                contactsUploaded: 0,
+                referChecked: false,
+                listCourses: new Array(),
+                listRefers: new Array(),
+                listHistory: new Array(),
+                listInterested: new Array(),
+                listMainCategories: new Array(),
+                listSubCategories: new Array(),
+                coverUrl: "https://firebasestorage.googleapis.com/v0/b/light-area-ee9d2.appspot.com/o/94262221_1749151885225675_1374120141486292992_n.jpg?alt=media&token=9b6640f4-d792-4454-874b-c94c796f9ed6&fbclid=IwAR0JXmtb-5BPBo_YYAxGUPeYiNXTIXIMmvnVINVJxo8RsZWiVBSSdMcbHac",
+                bio: "",
+                listCenters: new Array(),
+                contactPhone: "",
+                totalCourses: 0,
+                totalSubscribers: 0,
+                rating: 5,
+                totalRatingsCount: 0,
+                listSubscribed: new Array(),
+                listSubscribers: new Array(),
+                listFavoriteCourses: new Array(),
+
+            });
+
+
+        }
+
+
+    </script>
+
+    <script src="js/Login&SignUP.js"></script>
+</body>
+
+</html>
